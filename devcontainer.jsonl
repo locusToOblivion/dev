@@ -1,0 +1,25 @@
+{
+"name": "Ollama Codespace",
+"image": "mcr.microsoft.com/devcontainers/base:debian",
+
+/* STREAMING_CHUNK:Configuring lifecycle commands to trigger Ollama setup... */
+"postCreateCommand": "bash .devcontainer/setup-ollama.sh",
+
+/* STREAMING_CHUNK:Configuring port forwarding for the Ollama API... */
+"portsAttributes": {
+"11434": {
+"label": "Ollama API",
+"onAutoForward": "notify"
+}
+},
+
+/* STREAMING_CHUNK:Defining default extensions for a better experience... */
+"customizations": {
+"vscode": {
+"extensions": [
+"ms-python.python",
+"ms-azuretools.vscode-docker"
+]
+}
+}
+}
